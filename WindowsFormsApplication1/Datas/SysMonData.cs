@@ -16,9 +16,9 @@ namespace EITFlex.Datas
         public Byte FuelAdjust;
         public Byte CurrentMAP;
         public Byte CurrentMAPAcc;
-        public Byte EngStartup;
-        public Byte EngWarmupTimeS;
-        public Byte EngIdling;
+        public Byte EngineStarted;
+        public Byte EngineWarming;
+        public UInt64 EngineStartTime;
 
         #endregion
 
