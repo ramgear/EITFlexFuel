@@ -12,9 +12,12 @@ namespace EITFlex.Datas
     {
         #region Data layout declare must match to firmware.
 
-        public ConfigData Configs;
+        public Byte CurrentProfile;
 
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 600)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public ConfigData[] Configs;
+
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2000)]
         public Byte[] FuelMapping;
 
         #endregion

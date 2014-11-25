@@ -58,7 +58,17 @@ namespace EITFlex.Datas
         /// <summary>
         /// Injector information from EIT Board.
         /// </summary>
-        CMD_INJECTOR_INFO,   
+        CMD_INJECTOR_INFO,
+
+        /// <summary>
+        /// Read current profile index.
+        /// </summary>
+        CMD_READ_PROFILE,
+
+        /// <summary>
+        /// Write current profile index.
+        /// </summary>
+        CMD_WRITE_PROFILE,
 
         /// <summary>
         /// Byte command mode end mask.
