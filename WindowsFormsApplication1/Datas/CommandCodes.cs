@@ -56,6 +56,11 @@ namespace EITFlex.Datas
         CMD_MONITOR_INFO,
 
         /// <summary>
+        /// Injector information from EIT Board.
+        /// </summary>
+        CMD_INJECTOR_INFO,   
+
+        /// <summary>
         /// Byte command mode end mask.
         /// Don't set command code to this code due to it use by firmware.
         /// </summary>
