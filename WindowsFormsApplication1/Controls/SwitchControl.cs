@@ -91,17 +91,20 @@ namespace EITFlex.Controls
                 lblLabel1.Visible = value; 
             }
         }
-        /*
+
+        private bool mReadonly = true;
         public bool ReadOnly
         {
-            get { return !btnSet.Visible; }
+            get { return mReadonly; }
             set
             {
+                mReadonly = value;
+                tgbEnable.Enabled = !value;
                 btnSet.Visible = !value;
                 numValue1.ReadOnly = value;
                 numValue2.ReadOnly = value;
             }
-        }*/
+        }
 
         public SwitchControl()
         {

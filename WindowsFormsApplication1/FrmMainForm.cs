@@ -213,6 +213,13 @@ namespace EITFlex
                 btnSendCmd.Enabled = true;
                 txtCommandText.ReadOnly = false;
 
+                swFeatures.ReadOnly = false;
+                swFuelMap.ReadOnly = false;
+                swInjMon.ReadOnly = false;
+                swLoadAcc.ReadOnly = false;
+                swRPMAcc.ReadOnly = false;
+                swSysMon.ReadOnly = false;
+
                 this.DisplayText("Connected");
             }
             else
@@ -222,8 +229,15 @@ namespace EITFlex
                 gbSerialport.Enabled = true;
                 gbSerialSpeed.Enabled = true;
                 btnRefresh.Enabled = false;
-                btnSendCmd.Enabled = true;
+                btnSendCmd.Enabled = false;
                 txtCommandText.ReadOnly = true;
+
+                swFeatures.ReadOnly = true;
+                swFuelMap.ReadOnly = true;
+                swInjMon.ReadOnly = true;
+                swLoadAcc.ReadOnly = true;
+                swRPMAcc.ReadOnly = true;
+                swSysMon.ReadOnly = true;
 
                 this.DisplayText("Disconnected");
 
