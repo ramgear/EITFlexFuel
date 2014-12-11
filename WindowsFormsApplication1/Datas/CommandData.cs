@@ -37,10 +37,22 @@ namespace EITFlex.Datas
         /// <summary>
         /// Get or set command data.
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst=28)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst=60)]
         public Byte[] Data;
 
         #endregion
+
+        public void SetData(Byte[] data)
+        {
+            if (Data == null)
+                Data = new Byte[60];
+
+            int len = Data.Length;
+            if (data.Length < len)
+                len = data.Length;
+
+            Array.Copy(data, Data, len);
+        }
 
         #region Implicit Operator Overload for easier to use
 

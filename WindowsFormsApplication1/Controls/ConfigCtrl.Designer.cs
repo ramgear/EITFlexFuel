@@ -30,44 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.gbName = new EITFlex.Controls.CustomGroupBox();
-            this.lblUnit = new System.Windows.Forms.Label();
             this.btnApply = new EITFlex.Controls.CustomButton();
             this.txtValue = new EITFlex.Controls.CustomTextBox();
+            this.gbName = new EITFlex.Controls.CustomGroupBox();
+            this.lblUnit = new System.Windows.Forms.Label();
             this.gbName.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolTip1
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
-            // 
-            // gbName
-            // 
-            this.gbName.BorderColor = System.Drawing.Color.Silver;
-            this.gbName.Controls.Add(this.lblUnit);
-            this.gbName.Controls.Add(this.btnApply);
-            this.gbName.Controls.Add(this.txtValue);
-            this.gbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbName.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbName.Location = new System.Drawing.Point(0, 0);
-            this.gbName.Name = "gbName";
-            this.gbName.Size = new System.Drawing.Size(186, 55);
-            this.gbName.TabIndex = 0;
-            this.gbName.TabStop = false;
-            this.gbName.Text = "Name:";
-            this.gbName.Enter += new System.EventHandler(this.gbName_Enter);
-            // 
-            // lblUnit
-            // 
-            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblUnit.Location = new System.Drawing.Point(110, 16);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(28, 32);
-            this.lblUnit.TabIndex = 2;
-            this.lblUnit.Text = "%";
-            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUnit.Click += new System.EventHandler(this.lblUnit_Click);
             // 
             // btnApply
             // 
@@ -102,6 +74,35 @@
             this.txtValue.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtValue, "Change value.");
             this.txtValue.TextChanged += new System.EventHandler(this.txtValue_TextChanged);
+            // 
+            // gbName
+            // 
+            this.gbName.BackColor = System.Drawing.SystemColors.Control;
+            this.gbName.BorderColor = System.Drawing.Color.Silver;
+            this.gbName.Controls.Add(this.lblUnit);
+            this.gbName.Controls.Add(this.btnApply);
+            this.gbName.Controls.Add(this.txtValue);
+            this.gbName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbName.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbName.Location = new System.Drawing.Point(0, 0);
+            this.gbName.Name = "gbName";
+            this.gbName.Size = new System.Drawing.Size(186, 55);
+            this.gbName.TabIndex = 0;
+            this.gbName.TabStop = false;
+            this.gbName.Text = "Name:";
+            this.gbName.Enter += new System.EventHandler(this.gbName_Enter);
+            // 
+            // lblUnit
+            // 
+            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblUnit.Location = new System.Drawing.Point(110, 16);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(28, 32);
+            this.lblUnit.TabIndex = 2;
+            this.lblUnit.Text = "%";
+            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUnit.Click += new System.EventHandler(this.lblUnit_Click);
             // 
             // ConfigCtrl
             // 

@@ -33,4 +33,11 @@ namespace EITFlex.Datas
     /// <param name="sender">Serial port sender</param>
     /// <param name="e">string text</param>
     public delegate void TextReceivedEvenHandler(object sender, string e);
+
+    /// <summary>
+    /// Injector information data received event handler delegate.
+    /// </summary>
+    /// <param name="sender">Serial port sender</param>
+    /// <param name="e">Injector information data</param>
+    public delegate void InjectorReceivedEventHandler(object sender, InjectorData e);
 }

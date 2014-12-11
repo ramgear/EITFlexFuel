@@ -20,7 +20,6 @@ namespace EITFlex
     public partial class FrmMain : Form
     {
         EITFlexBoard board;
-        ConfigData mConfigs;
 
         delegate void ConfigHandler(ConfigData cfg);
         delegate void SysMonHandler(SysMonData info);
@@ -43,14 +42,6 @@ namespace EITFlex
             cfgHandler = new ConfigHandler(this.loadConfig);
             sysMonHandler = new SysMonHandler(this.loadMonitoringInfo);
             msgHandler = new MsgHandler(this.FillMessage);
-
-            Console.WriteLine("SizeOf(CommandData) = {0}", Marshal.SizeOf(typeof(CommandData)));
-            Console.WriteLine("SizeOf(FeatureDarta) = {0}", Marshal.SizeOf(typeof(FeatureDarta)));
-            Console.WriteLine("SizeOf(InjectorData) = {0}", Marshal.SizeOf(typeof(InjectorData)));
-            Console.WriteLine("SizeOf(SysMonData) = {0}", Marshal.SizeOf(typeof(SysMonData)));
-            Console.WriteLine("SizeOf(ConfigData) = {0}", Marshal.SizeOf(typeof(ConfigData)));
-            Console.WriteLine("SizeOf(EEPROMData) = {0}", Marshal.SizeOf(typeof(EEPROMData)));
-            Console.WriteLine("Done.");
         }
 
         void board_OnCommandgDataReceived(object sender, CommandData e)
@@ -66,10 +57,13 @@ namespace EITFlex
 
         void FillMessage(string msg)
         {
+            /*
             string[] lines = new string[tbxMessage.Lines.Length + 1];
             Array.Copy(tbxMessage.Lines, lines, tbxMessage.Lines.Length);
             lines[lines.Length - 1] = msg;
             tbxMessage.Lines = lines;
+             */
+            tbxMessage.Text += msg;
         }
 
         void board_OnTextReceived(object sender, string e)
@@ -109,9 +103,7 @@ namespace EITFlex
 
         private void loadConfig(ConfigData e)
         {
-            mConfigs = e;
-
-            cfgManualAdj.Value = e.ManualAdjust;
+            /*cfgManualAdj.Value = e.ManualAdjust;
             cfgWarmupTime.Value = e.WarmUpTime;
             cfgWarmupRPM.Value = e.WarmUpRPM;
             cfgRevPerPulse.Value = e.RevPerPulse;
@@ -126,7 +118,7 @@ namespace EITFlex
             cfgLoadStart.Value = e.MAPStart;
             cfgLoadEnd.Value = e.MAPEnd;
             cfgLoadAccAdj.Value = e.MAPAdjust;
-            cfgLoadAdjStep.Value = e.MAPAdjustStep;
+            cfgLoadAdjStep.Value = e.MAPAdjustStep;*/
         }
 
         void loadMonitoringInfo(SysMonData sysMon)
@@ -232,40 +224,9 @@ namespace EITFlex
         {
             try
             {
-                cboPorts.Items.AddRange(SerialPort.GetPortNames());
+                //cboPorts.Items.AddRange(SerialPort.GetPortNames());
             }
             catch (Exception ex)
-            {
-                this.ShowErrorDialog(ex);
-            }
-        }
-
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (board.IsOpen)
-                {
-                    board.DiscardInBuffer();
-                    board.DiscardOutBuffer();
-                    board.Close();
-
-                    btnConnect.Text = "Connect";
-                }
-                else
-                {
-                    board.PortName = cboPorts.Text;
-                    board.Open();
-                    board.DiscardInBuffer();
-                    board.DiscardOutBuffer();
-
-                    // send read config command on connect to board
-                    //board.SendCommand(CommandCodes.CMD_READ_CONFIGS);
-
-                    btnConnect.Text = "Disconnect";
-                }
-
-            }catch(Exception ex)
             {
                 this.ShowErrorDialog(ex);
             }
@@ -282,60 +243,13 @@ namespace EITFlex
             {
                 if (e.KeyChar == (char)Keys.Enter)
                 {
-                    board.SendCommand(txtCmdText.Text);
+                   // board.SendCommand(txtCmdText.Text);
                 }
             }
             catch (Exception ex)
             {
                 this.ShowErrorDialog(ex);
             }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox6_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox6_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void infoCtrl1_Load(object sender, EventArgs e)
-        {
-                    }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void configCtrl10_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void configCtrl2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cfgGraphXCount_OnValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void cfgGraphYCount_OnValueChanged(object sender, EventArgs e)
-        {
         }
     }
 }
