@@ -67,15 +67,23 @@
             this.swFeatures = new EITFlex.Controls.SwitchControl();
             this.headerControl3 = new EITFlex.Controls.HeaderControl();
             this.tpFuelMap = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gpFuelMapTable = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cfgLoadAdjStep = new EITFlex.Controls.ConfigCtrl();
-            this.cfgLoadStart = new EITFlex.Controls.ConfigCtrl();
-            this.cfgLoadEnd = new EITFlex.Controls.ConfigCtrl();
-            this.cfgRPMAdjStep = new EITFlex.Controls.ConfigCtrl();
-            this.cfgRPMEnd = new EITFlex.Controls.ConfigCtrl();
-            this.cfgRPMStart = new EITFlex.Controls.ConfigCtrl();
+            this.gpFuelMapSetting = new System.Windows.Forms.GroupBox();
+            this.btnFuelMapCal = new EITFlex.Controls.CustomButton();
+            this.numLoadEnd = new System.Windows.Forms.NumericUpDown();
+            this.numLoadStep = new System.Windows.Forms.NumericUpDown();
+            this.numLoadStart = new System.Windows.Forms.NumericUpDown();
+            this.numRPMEnd = new System.Windows.Forms.NumericUpDown();
+            this.numRPMStep = new System.Windows.Forms.NumericUpDown();
+            this.numRPMStart = new System.Windows.Forms.NumericUpDown();
+            this.btnFuelMapApply = new EITFlex.Controls.CustomButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.headerControl4 = new EITFlex.Controls.HeaderControl();
             this.tpComm = new System.Windows.Forms.TabPage();
             this.btnSerialDisconnect = new EITFlex.Controls.CustomButton();
@@ -83,6 +91,7 @@
             this.gbSerialSpeed = new EITFlex.Controls.CustomGroupBox();
             this.gbSerialport = new EITFlex.Controls.CustomGroupBox();
             this.headerControl5 = new EITFlex.Controls.HeaderControl();
+            this.btnFuelMapRead = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,9 +104,15 @@
             this.panel2.SuspendLayout();
             this.tpSetting.SuspendLayout();
             this.tpFuelMap.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gpFuelMapTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gpFuelMapSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoadEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoadStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoadStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRPMEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRPMStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRPMStart)).BeginInit();
             this.tpComm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -314,6 +329,7 @@
             this.customGroupBox1.BorderColor = System.Drawing.Color.Silver;
             this.customGroupBox1.Controls.Add(this.tbxMessage);
             this.customGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.customGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.customGroupBox1.Location = new System.Drawing.Point(426, 73);
             this.customGroupBox1.Name = "customGroupBox1";
@@ -327,12 +343,12 @@
             // 
             this.tbxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxMessage.Location = new System.Drawing.Point(5, 18);
+            this.tbxMessage.Location = new System.Drawing.Point(5, 20);
             this.tbxMessage.Multiline = true;
             this.tbxMessage.Name = "tbxMessage";
             this.tbxMessage.ReadOnly = true;
             this.tbxMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxMessage.Size = new System.Drawing.Size(347, 406);
+            this.tbxMessage.Size = new System.Drawing.Size(347, 404);
             this.tbxMessage.TabIndex = 0;
             // 
             // panel4
@@ -349,6 +365,7 @@
             // txtCommandText
             // 
             this.txtCommandText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCommandText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtCommandText.Location = new System.Drawing.Point(0, 0);
             this.txtCommandText.Multiline = true;
             this.txtCommandText.Name = "txtCommandText";
@@ -568,6 +585,7 @@
             0,
             0});
             this.swInjMon.Name = "swInjMon";
+            this.swInjMon.ReadOnly = true;
             this.swInjMon.Size = new System.Drawing.Size(780, 61);
             this.swInjMon.Stat = false;
             this.swInjMon.TabIndex = 8;
@@ -614,6 +632,7 @@
             0,
             0});
             this.swSysMon.Name = "swSysMon";
+            this.swSysMon.ReadOnly = true;
             this.swSysMon.Size = new System.Drawing.Size(780, 55);
             this.swSysMon.Stat = false;
             this.swSysMon.TabIndex = 7;
@@ -659,6 +678,7 @@
             0,
             0});
             this.swLoadAcc.Name = "swLoadAcc";
+            this.swLoadAcc.ReadOnly = true;
             this.swLoadAcc.Size = new System.Drawing.Size(780, 90);
             this.swLoadAcc.Stat = false;
             this.swLoadAcc.TabIndex = 6;
@@ -667,7 +687,7 @@
             0,
             0,
             0});
-            this.swLoadAcc.Value1Visible = true;
+            this.swLoadAcc.Value1Visible = false;
             this.swLoadAcc.Value2 = new decimal(new int[] {
             0,
             0,
@@ -705,6 +725,7 @@
             0,
             0});
             this.swRPMAcc.Name = "swRPMAcc";
+            this.swRPMAcc.ReadOnly = true;
             this.swRPMAcc.Size = new System.Drawing.Size(780, 91);
             this.swRPMAcc.Stat = false;
             this.swRPMAcc.TabIndex = 5;
@@ -713,7 +734,7 @@
             0,
             0,
             0});
-            this.swRPMAcc.Value1Visible = true;
+            this.swRPMAcc.Value1Visible = false;
             this.swRPMAcc.Value2 = new decimal(new int[] {
             0,
             0,
@@ -752,6 +773,7 @@
             0,
             0});
             this.swFuelMap.Name = "swFuelMap";
+            this.swFuelMap.ReadOnly = true;
             this.swFuelMap.Size = new System.Drawing.Size(780, 88);
             this.swFuelMap.Stat = false;
             this.swFuelMap.TabIndex = 4;
@@ -760,7 +782,7 @@
             0,
             0,
             0});
-            this.swFuelMap.Value1Visible = true;
+            this.swFuelMap.Value1Visible = false;
             this.swFuelMap.Value2 = new decimal(new int[] {
             0,
             0,
@@ -799,6 +821,7 @@
             0,
             0});
             this.swFeatures.Name = "swFeatures";
+            this.swFeatures.ReadOnly = true;
             this.swFeatures.Size = new System.Drawing.Size(780, 90);
             this.swFeatures.Stat = false;
             this.swFeatures.TabIndex = 3;
@@ -830,8 +853,8 @@
             // 
             // tpFuelMap
             // 
-            this.tpFuelMap.Controls.Add(this.groupBox2);
-            this.tpFuelMap.Controls.Add(this.groupBox1);
+            this.tpFuelMap.Controls.Add(this.gpFuelMapTable);
+            this.tpFuelMap.Controls.Add(this.gpFuelMapSetting);
             this.tpFuelMap.Controls.Add(this.headerControl4);
             this.tpFuelMap.Location = new System.Drawing.Point(4, 52);
             this.tpFuelMap.Name = "tpFuelMap";
@@ -841,18 +864,19 @@
             this.tpFuelMap.Text = "Fuel Map";
             this.tpFuelMap.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // gpFuelMapTable
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 239);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(780, 263);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Fuel Mapping:";
+            this.gpFuelMapTable.Controls.Add(this.dataGridView1);
+            this.gpFuelMapTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpFuelMapTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.gpFuelMapTable.Location = new System.Drawing.Point(3, 167);
+            this.gpFuelMapTable.Margin = new System.Windows.Forms.Padding(4);
+            this.gpFuelMapTable.Name = "gpFuelMapTable";
+            this.gpFuelMapTable.Padding = new System.Windows.Forms.Padding(4);
+            this.gpFuelMapTable.Size = new System.Drawing.Size(780, 335);
+            this.gpFuelMapTable.TabIndex = 5;
+            this.gpFuelMapTable.TabStop = false;
+            this.gpFuelMapTable.Text = "Fuel Mapping:";
             // 
             // dataGridView1
             // 
@@ -865,113 +889,181 @@
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 19);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(772, 242);
+            this.dataGridView1.RowHeadersWidth = 60;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(772, 312);
             this.dataGridView1.TabIndex = 0;
             // 
-            // groupBox1
+            // gpFuelMapSetting
             // 
-            this.groupBox1.Controls.Add(this.cfgLoadAdjStep);
-            this.groupBox1.Controls.Add(this.cfgLoadStart);
-            this.groupBox1.Controls.Add(this.cfgLoadEnd);
-            this.groupBox1.Controls.Add(this.cfgRPMAdjStep);
-            this.groupBox1.Controls.Add(this.cfgRPMEnd);
-            this.groupBox1.Controls.Add(this.cfgRPMStart);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(3, 45);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(780, 194);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fuel Mapping Config::";
+            this.gpFuelMapSetting.Controls.Add(this.btnFuelMapRead);
+            this.gpFuelMapSetting.Controls.Add(this.btnFuelMapCal);
+            this.gpFuelMapSetting.Controls.Add(this.numLoadEnd);
+            this.gpFuelMapSetting.Controls.Add(this.numLoadStep);
+            this.gpFuelMapSetting.Controls.Add(this.numLoadStart);
+            this.gpFuelMapSetting.Controls.Add(this.numRPMEnd);
+            this.gpFuelMapSetting.Controls.Add(this.numRPMStep);
+            this.gpFuelMapSetting.Controls.Add(this.numRPMStart);
+            this.gpFuelMapSetting.Controls.Add(this.btnFuelMapApply);
+            this.gpFuelMapSetting.Controls.Add(this.label6);
+            this.gpFuelMapSetting.Controls.Add(this.label7);
+            this.gpFuelMapSetting.Controls.Add(this.label8);
+            this.gpFuelMapSetting.Controls.Add(this.label5);
+            this.gpFuelMapSetting.Controls.Add(this.label4);
+            this.gpFuelMapSetting.Controls.Add(this.label3);
+            this.gpFuelMapSetting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gpFuelMapSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.gpFuelMapSetting.Location = new System.Drawing.Point(3, 45);
+            this.gpFuelMapSetting.Margin = new System.Windows.Forms.Padding(4);
+            this.gpFuelMapSetting.Name = "gpFuelMapSetting";
+            this.gpFuelMapSetting.Padding = new System.Windows.Forms.Padding(4);
+            this.gpFuelMapSetting.Size = new System.Drawing.Size(780, 122);
+            this.gpFuelMapSetting.TabIndex = 4;
+            this.gpFuelMapSetting.TabStop = false;
+            this.gpFuelMapSetting.Text = "Fuel Mapping Config::";
             // 
-            // cfgLoadAdjStep
+            // btnFuelMapCal
             // 
-            this.cfgLoadAdjStep.BackColor = System.Drawing.SystemColors.Control;
-            this.cfgLoadAdjStep.Location = new System.Drawing.Point(416, 113);
-            this.cfgLoadAdjStep.Margin = new System.Windows.Forms.Padding(12, 9, 12, 9);
-            this.cfgLoadAdjStep.Max = 100;
-            this.cfgLoadAdjStep.Min = 0;
-            this.cfgLoadAdjStep.Name = "cfgLoadAdjStep";
-            this.cfgLoadAdjStep.Size = new System.Drawing.Size(171, 55);
-            this.cfgLoadAdjStep.TabIndex = 28;
-            this.cfgLoadAdjStep.Title = "Load Adj Step:";
-            this.cfgLoadAdjStep.Unit = "%";
-            this.cfgLoadAdjStep.Value = 0;
+            this.btnFuelMapCal.Changed = false;
+            this.btnFuelMapCal.ChangeImage = null;
+            this.btnFuelMapCal.Location = new System.Drawing.Point(553, 51);
+            this.btnFuelMapCal.Name = "btnFuelMapCal";
+            this.btnFuelMapCal.Size = new System.Drawing.Size(105, 31);
+            this.btnFuelMapCal.TabIndex = 19;
+            this.btnFuelMapCal.Text = "Cal";
+            this.btnFuelMapCal.UseVisualStyleBackColor = true;
+            this.btnFuelMapCal.Click += new System.EventHandler(this.btnFuelMapCal_Click);
             // 
-            // cfgLoadStart
+            // numLoadEnd
             // 
-            this.cfgLoadStart.BackColor = System.Drawing.SystemColors.Control;
-            this.cfgLoadStart.Location = new System.Drawing.Point(22, 113);
-            this.cfgLoadStart.Margin = new System.Windows.Forms.Padding(12, 9, 12, 9);
-            this.cfgLoadStart.Max = 100;
-            this.cfgLoadStart.Min = 0;
-            this.cfgLoadStart.Name = "cfgLoadStart";
-            this.cfgLoadStart.Size = new System.Drawing.Size(171, 55);
-            this.cfgLoadStart.TabIndex = 27;
-            this.cfgLoadStart.Title = "Load Start:";
-            this.cfgLoadStart.Unit = "%";
-            this.cfgLoadStart.Value = 0;
+            this.numLoadEnd.DecimalPlaces = 1;
+            this.numLoadEnd.Location = new System.Drawing.Point(370, 84);
+            this.numLoadEnd.Name = "numLoadEnd";
+            this.numLoadEnd.ReadOnly = true;
+            this.numLoadEnd.Size = new System.Drawing.Size(120, 22);
+            this.numLoadEnd.TabIndex = 18;
             // 
-            // cfgLoadEnd
+            // numLoadStep
             // 
-            this.cfgLoadEnd.BackColor = System.Drawing.SystemColors.Control;
-            this.cfgLoadEnd.Location = new System.Drawing.Point(219, 113);
-            this.cfgLoadEnd.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.cfgLoadEnd.Max = 100;
-            this.cfgLoadEnd.Min = 0;
-            this.cfgLoadEnd.Name = "cfgLoadEnd";
-            this.cfgLoadEnd.Size = new System.Drawing.Size(171, 55);
-            this.cfgLoadEnd.TabIndex = 26;
-            this.cfgLoadEnd.Title = "Load End:";
-            this.cfgLoadEnd.Unit = "%";
-            this.cfgLoadEnd.Value = 0;
+            this.numLoadStep.DecimalPlaces = 1;
+            this.numLoadStep.Location = new System.Drawing.Point(370, 57);
+            this.numLoadStep.Name = "numLoadStep";
+            this.numLoadStep.Size = new System.Drawing.Size(120, 22);
+            this.numLoadStep.TabIndex = 17;
             // 
-            // cfgRPMAdjStep
+            // numLoadStart
             // 
-            this.cfgRPMAdjStep.BackColor = System.Drawing.SystemColors.Control;
-            this.cfgRPMAdjStep.Location = new System.Drawing.Point(416, 33);
-            this.cfgRPMAdjStep.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.cfgRPMAdjStep.Max = 100;
-            this.cfgRPMAdjStep.Min = 0;
-            this.cfgRPMAdjStep.Name = "cfgRPMAdjStep";
-            this.cfgRPMAdjStep.Size = new System.Drawing.Size(171, 55);
-            this.cfgRPMAdjStep.TabIndex = 24;
-            this.cfgRPMAdjStep.Title = "RPM Adj Step:";
-            this.cfgRPMAdjStep.Unit = "";
-            this.cfgRPMAdjStep.Value = 0;
+            this.numLoadStart.DecimalPlaces = 1;
+            this.numLoadStart.Location = new System.Drawing.Point(370, 28);
+            this.numLoadStart.Name = "numLoadStart";
+            this.numLoadStart.Size = new System.Drawing.Size(120, 22);
+            this.numLoadStart.TabIndex = 16;
             // 
-            // cfgRPMEnd
+            // numRPMEnd
             // 
-            this.cfgRPMEnd.BackColor = System.Drawing.SystemColors.Control;
-            this.cfgRPMEnd.Location = new System.Drawing.Point(219, 33);
-            this.cfgRPMEnd.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.cfgRPMEnd.Max = 100;
-            this.cfgRPMEnd.Min = 0;
-            this.cfgRPMEnd.Name = "cfgRPMEnd";
-            this.cfgRPMEnd.Size = new System.Drawing.Size(171, 55);
-            this.cfgRPMEnd.TabIndex = 23;
-            this.cfgRPMEnd.Title = "RPM End:";
-            this.cfgRPMEnd.Unit = "";
-            this.cfgRPMEnd.Value = 0;
+            this.numRPMEnd.Location = new System.Drawing.Point(102, 84);
+            this.numRPMEnd.Maximum = new decimal(new int[] {
+            7500,
+            0,
+            0,
+            0});
+            this.numRPMEnd.Name = "numRPMEnd";
+            this.numRPMEnd.ReadOnly = true;
+            this.numRPMEnd.Size = new System.Drawing.Size(120, 22);
+            this.numRPMEnd.TabIndex = 15;
             // 
-            // cfgRPMStart
+            // numRPMStep
             // 
-            this.cfgRPMStart.BackColor = System.Drawing.SystemColors.Control;
-            this.cfgRPMStart.Location = new System.Drawing.Point(22, 33);
-            this.cfgRPMStart.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.cfgRPMStart.Max = 100;
-            this.cfgRPMStart.Min = 0;
-            this.cfgRPMStart.Name = "cfgRPMStart";
-            this.cfgRPMStart.Size = new System.Drawing.Size(171, 55);
-            this.cfgRPMStart.TabIndex = 22;
-            this.cfgRPMStart.Title = "RPM Start:";
-            this.cfgRPMStart.Unit = "";
-            this.cfgRPMStart.Value = 0;
+            this.numRPMStep.Location = new System.Drawing.Point(102, 57);
+            this.numRPMStep.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numRPMStep.Name = "numRPMStep";
+            this.numRPMStep.Size = new System.Drawing.Size(120, 22);
+            this.numRPMStep.TabIndex = 14;
+            // 
+            // numRPMStart
+            // 
+            this.numRPMStart.Location = new System.Drawing.Point(102, 28);
+            this.numRPMStart.Maximum = new decimal(new int[] {
+            7500,
+            0,
+            0,
+            0});
+            this.numRPMStart.Name = "numRPMStart";
+            this.numRPMStart.Size = new System.Drawing.Size(120, 22);
+            this.numRPMStart.TabIndex = 13;
+            // 
+            // btnFuelMapApply
+            // 
+            this.btnFuelMapApply.Changed = false;
+            this.btnFuelMapApply.ChangeImage = null;
+            this.btnFuelMapApply.Location = new System.Drawing.Point(553, 15);
+            this.btnFuelMapApply.Name = "btnFuelMapApply";
+            this.btnFuelMapApply.Size = new System.Drawing.Size(105, 31);
+            this.btnFuelMapApply.TabIndex = 12;
+            this.btnFuelMapApply.Text = "Apply";
+            this.btnFuelMapApply.UseVisualStyleBackColor = true;
+            this.btnFuelMapApply.Click += new System.EventHandler(this.btnFuelMapApply_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(295, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Load End:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(292, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 16);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Load Step:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(292, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 16);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Load Start:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "RPM End:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "RPM Step:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "RPM Start:";
             // 
             // headerControl4
             // 
@@ -1064,6 +1156,16 @@
             this.headerControl5.TabIndex = 3;
             this.headerControl5.TextColor = System.Drawing.SystemColors.MenuHighlight;
             // 
+            // btnFuelMapRead
+            // 
+            this.btnFuelMapRead.Location = new System.Drawing.Point(553, 87);
+            this.btnFuelMapRead.Name = "btnFuelMapRead";
+            this.btnFuelMapRead.Size = new System.Drawing.Size(105, 31);
+            this.btnFuelMapRead.TabIndex = 20;
+            this.btnFuelMapRead.Text = "Read";
+            this.btnFuelMapRead.UseVisualStyleBackColor = true;
+            this.btnFuelMapRead.Click += new System.EventHandler(this.btnFuelMapRead_Click);
+            // 
             // FrmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1091,9 +1193,16 @@
             this.panel2.ResumeLayout(false);
             this.tpSetting.ResumeLayout(false);
             this.tpFuelMap.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.gpFuelMapTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.gpFuelMapSetting.ResumeLayout(false);
+            this.gpFuelMapSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoadEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoadStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLoadStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRPMEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRPMStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRPMStart)).EndInit();
             this.tpComm.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1127,15 +1236,9 @@
         private System.Windows.Forms.TabPage tpFuelMap;
         private Controls.HeaderControl headerControl4;
         private Controls.HeaderControl headerControl1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gpFuelMapTable;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Controls.ConfigCtrl cfgLoadAdjStep;
-        private Controls.ConfigCtrl cfgLoadStart;
-        private Controls.ConfigCtrl cfgLoadEnd;
-        private Controls.ConfigCtrl cfgRPMAdjStep;
-        private Controls.ConfigCtrl cfgRPMEnd;
-        private Controls.ConfigCtrl cfgRPMStart;
+        private System.Windows.Forms.GroupBox gpFuelMapSetting;
         private Controls.TabButton tbCommunication;
         private System.Windows.Forms.TabPage tpComm;
         private Controls.HeaderControl headerControl5;
@@ -1153,6 +1256,21 @@
         private Controls.CustomButton btnRefresh;
         private Controls.CustomButton btnClearMessage;
         private System.Windows.Forms.TextBox txtCommandText;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private Controls.CustomButton btnFuelMapApply;
+        private System.Windows.Forms.NumericUpDown numLoadEnd;
+        private System.Windows.Forms.NumericUpDown numLoadStep;
+        private System.Windows.Forms.NumericUpDown numLoadStart;
+        private System.Windows.Forms.NumericUpDown numRPMEnd;
+        private System.Windows.Forms.NumericUpDown numRPMStep;
+        private System.Windows.Forms.NumericUpDown numRPMStart;
+        private Controls.CustomButton btnFuelMapCal;
+        private System.Windows.Forms.Button btnFuelMapRead;
 
 
 

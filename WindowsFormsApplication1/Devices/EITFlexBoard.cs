@@ -41,11 +41,6 @@ namespace EITFlex.Devices
         /// </summary>
         public event TextReceivedEvenHandler OnTextReceived;
 
-        /// <summary>
-        /// Handle injector information data received event from EIT Board.
-        /// </summary>
-        public event InjectorReceivedEventHandler OnInjectorDataReceived;
-
         public event EventHandler OnConnectionStatChanged;
         public event EventHandler OnConnectionTimeout;
 
@@ -65,6 +60,8 @@ namespace EITFlex.Devices
 
             }
         }
+
+        public bool PingCheck { get; set; }
 
         BackgroundWorker pingWorker;
         Timer pingTimer;
@@ -91,16 +88,21 @@ namespace EITFlex.Devices
             pingTimeout.Elapsed += new ElapsedEventHandler(pingTimeout_Elapsed);
 
             mPingMsg = "echo," + PingMsg;
+            PingCheck = false;
         }
 
-        void ping()
+        bool ping()
         {
-            if (this.IsOpen)
+            if (this.PingCheck && this.IsOpen)
             {
                 this.SendCommand(mPingMsg);
                 pingTimeout.Interval = 2000;
                 pingTimeout.Enabled = true;
+
+                return true;
             }
+
+            return false;
         }
 
         void pingTimeout_Elapsed(object sender, ElapsedEventArgs e)
@@ -156,8 +158,10 @@ namespace EITFlex.Devices
                 this.DiscardOutBuffer();
                 this.DtrEnable = true;
 
-                this.ping();
-                pingTimer.Enabled = true;
+                if(this.ping())
+                    pingTimer.Enabled = true;
+                else
+                    this.Connected = true;
             }
 
             return this.IsOpen;
@@ -246,13 +250,6 @@ namespace EITFlex.Devices
                 if (this.OnSysMonDataReceived != null)
                 {
                     this.OnSysMonDataReceived(this, e.Data);
-                }
-            }
-            else if (e.CommandCode == (Byte)CommandCodes.CMD_INJECTOR_INFO)
-            {
-                if (this.OnInjectorDataReceived != null)
-                {
-                    this.OnInjectorDataReceived(this, e.Data);
                 }
             }
         }

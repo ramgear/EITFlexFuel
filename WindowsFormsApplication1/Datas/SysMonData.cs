@@ -19,6 +19,10 @@ namespace EITFlex.Datas
         public Byte EngineStarted;
         public Byte EngineWarming;
         public UInt64 EngineStartTime;
+        public UInt16 CurrentRPM;
+        public UInt16 CurrentRPMAcc;
+        public Byte CurrentDuty;
+        public UInt64 CriticalTimeUS;
 
         #endregion
 

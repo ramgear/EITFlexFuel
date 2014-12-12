@@ -125,7 +125,6 @@
     <Compile Include="Datas\EEPROMData.cs" />
     <Compile Include="Datas\ErrCodes.cs" />
     <Compile Include="Datas\FeatureDarta.cs" />
-    <Compile Include="Datas\InjectorData.cs" />
     <Compile Include="Datas\PWMData.cs" />
     <Compile Include="Datas\SysMonData.cs" />
     <Compile Include="Devices\EITFlexBoard.cs">
