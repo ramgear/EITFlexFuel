@@ -219,6 +219,7 @@ namespace EITFlex
             swSysMon.Stat = e.Features.Monitoring != 0;
             swInjMon.Stat = e.Features.InjMonitoring != 0;
 
+            swFeatures.Value1 = e.MaxAdjust;
             swFeatures.Value2 = e.ManualAdjust;
 
             swFuelMap.Value1 = e.RPMCount;
@@ -793,6 +794,7 @@ namespace EITFlex
             {
                 if (mConfigReceived)
                 {
+                    mConfigs.MaxAdjust = (Byte)swFeatures.Value1;
                     mConfigs.ManualAdjust = (Byte)swFeatures.Value2;
                     ChangeConfigs(mConfigs);
                 }
@@ -859,6 +861,7 @@ namespace EITFlex
                 mConfigs.MAPEnd = (Byte)numLoadEnd.Value;
                 mConfigs.MAPStep = (Byte)((mConfigs.MAPEnd - mConfigs.MAPStart) / (mConfigs.MAPCount + 1));
                 numLoadEnd.Value = mConfigs.MAPStep;
+                ChangeConfigs(mConfigs);
 
                 createMapping(mConfigs);
             }

@@ -70,6 +70,7 @@
             this.gpFuelMapTable = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gpFuelMapSetting = new System.Windows.Forms.GroupBox();
+            this.btnFuelMapRead = new System.Windows.Forms.Button();
             this.btnFuelMapCal = new EITFlex.Controls.CustomButton();
             this.numLoadEnd = new System.Windows.Forms.NumericUpDown();
             this.numLoadStep = new System.Windows.Forms.NumericUpDown();
@@ -91,7 +92,6 @@
             this.gbSerialSpeed = new EITFlex.Controls.CustomGroupBox();
             this.gbSerialport = new EITFlex.Controls.CustomGroupBox();
             this.headerControl5 = new EITFlex.Controls.HeaderControl();
-            this.btnFuelMapRead = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -594,7 +594,6 @@
             0,
             0,
             0});
-            this.swInjMon.Value1Visible = false;
             this.swInjMon.Value2 = new decimal(new int[] {
             0,
             0,
@@ -641,7 +640,6 @@
             0,
             0,
             0});
-            this.swSysMon.Value1Visible = false;
             this.swSysMon.Value2 = new decimal(new int[] {
             0,
             0,
@@ -687,7 +685,6 @@
             0,
             0,
             0});
-            this.swLoadAcc.Value1Visible = false;
             this.swLoadAcc.Value2 = new decimal(new int[] {
             0,
             0,
@@ -734,7 +731,6 @@
             0,
             0,
             0});
-            this.swRPMAcc.Value1Visible = false;
             this.swRPMAcc.Value2 = new decimal(new int[] {
             0,
             0,
@@ -782,7 +778,6 @@
             0,
             0,
             0});
-            this.swFuelMap.Value1Visible = false;
             this.swFuelMap.Value2 = new decimal(new int[] {
             0,
             0,
@@ -797,11 +792,11 @@
                 "ad Acceleration\".";
             this.swFeatures.Dock = System.Windows.Forms.DockStyle.Top;
             this.swFeatures.HeaderText = "Features";
-            this.swFeatures.Label1 = "label1";
+            this.swFeatures.Label1 = "Maximum Adjust ( 0 - 35 % ):";
             this.swFeatures.Label2 = "Manual Adjust ( 0 - 35 % ):";
             this.swFeatures.Location = new System.Drawing.Point(3, 45);
             this.swFeatures.Maximum1 = new decimal(new int[] {
-            100,
+            35,
             0,
             0,
             0});
@@ -830,7 +825,6 @@
             0,
             0,
             0});
-            this.swFeatures.Value1Visible = false;
             this.swFeatures.Value2 = new decimal(new int[] {
             0,
             0,
@@ -924,6 +918,16 @@
             this.gpFuelMapSetting.TabIndex = 4;
             this.gpFuelMapSetting.TabStop = false;
             this.gpFuelMapSetting.Text = "Fuel Mapping Config::";
+            // 
+            // btnFuelMapRead
+            // 
+            this.btnFuelMapRead.Location = new System.Drawing.Point(553, 87);
+            this.btnFuelMapRead.Name = "btnFuelMapRead";
+            this.btnFuelMapRead.Size = new System.Drawing.Size(105, 31);
+            this.btnFuelMapRead.TabIndex = 20;
+            this.btnFuelMapRead.Text = "Read";
+            this.btnFuelMapRead.UseVisualStyleBackColor = true;
+            this.btnFuelMapRead.Click += new System.EventHandler(this.btnFuelMapRead_Click);
             // 
             // btnFuelMapCal
             // 
@@ -1155,16 +1159,6 @@
             this.headerControl5.Size = new System.Drawing.Size(780, 35);
             this.headerControl5.TabIndex = 3;
             this.headerControl5.TextColor = System.Drawing.SystemColors.MenuHighlight;
-            // 
-            // btnFuelMapRead
-            // 
-            this.btnFuelMapRead.Location = new System.Drawing.Point(553, 87);
-            this.btnFuelMapRead.Name = "btnFuelMapRead";
-            this.btnFuelMapRead.Size = new System.Drawing.Size(105, 31);
-            this.btnFuelMapRead.TabIndex = 20;
-            this.btnFuelMapRead.Text = "Read";
-            this.btnFuelMapRead.UseVisualStyleBackColor = true;
-            this.btnFuelMapRead.Click += new System.EventHandler(this.btnFuelMapRead_Click);
             // 
             // FrmMainForm
             // 

@@ -82,11 +82,13 @@ namespace EITFlex.Controls
             get { return numValue2.Value; }
             set { numValue2.Value = value; }
         }
-
+        
+        private bool mV1Visible = true;
         public bool Value1Visible
         {
-            get { return numValue1.Visible; }
+            get { return mV1Visible; }
             set {
+                mV1Visible = value;
                 numValue1.Visible = value;
                 lblLabel1.Visible = value; 
             }
